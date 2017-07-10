@@ -10,6 +10,21 @@ TTree *TCl = (TTree *) FCl->Get("TreeScenario");
 TCy->SetLineColor(kRed); TCy->SetMarkerColor(kRed); TCy->SetLineWidth(3);
 TCl->SetLineColor(kBlue); TCl->SetMarkerColor(kBlue); TCl->SetLineWidth(3);
 
+// ################################################################################
+// ENERGY
+// ################################################################################
+
+TCanvas *C00 = new TCanvas("C00","Power",700,500);
+TH2D *tmp0 = new TH2D("tmp0","Thermal Power",10,0,102,10,0,4e9);
+tmp0->GetXaxis()->SetTitle("Time (y)");       tmp0->GetXaxis()->CenterTitle();    tmp0->GetXaxis()->SetTitleOffset(1.0);
+tmp0->GetYaxis()->SetTitle("Power (W)");      tmp0->GetYaxis()->CenterTitle();    tmp0->GetYaxis()->SetTitleOffset(1.0);
+tmp0->Draw("");
+TCy->Draw("P:T","","Lsame");
+TCl->Draw("P:T","","Lsame");
+
+// ################################################################################
+// Plutonium
+// ################################################################################
 
 TCanvas *C0 = new TCanvas("C0","Pu",1400,900);
 C0->Divide(2,2,0.01,0.01);

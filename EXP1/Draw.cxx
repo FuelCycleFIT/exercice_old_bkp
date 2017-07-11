@@ -1,7 +1,11 @@
+void Draw(string s_Exo, string s_Run)
 {
 gStyle->SetOptStat(0);
 
-TFile *FCy = new TFile("cyclus_exo3_3.root");
+string s_TFile_Cyclus = s_Exo + "/" + s_Run + ;
+
+
+TFile *FCy = new TFile("cyclus_exo1_1.root");
 TFile *FCl = new TFile("Scenario.root");
 
 TTree *TCy = (TTree *) FCy->Get("TT");
@@ -10,6 +14,7 @@ TTree *TCl = (TTree *) FCl->Get("TreeScenario");
 TCy->SetLineColor(kRed); TCy->SetMarkerColor(kRed); TCy->SetLineWidth(3);
 TCl->SetLineColor(kBlue); TCl->SetMarkerColor(kBlue); TCl->SetLineWidth(3);
 
+/*
 // ################################################################################
 // ENERGY
 // ################################################################################
@@ -104,7 +109,7 @@ TCl->Draw("B95:T","","Lsame");
 
 
 
-
+*/
 
 
 }

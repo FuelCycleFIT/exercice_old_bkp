@@ -43,7 +43,7 @@ TCl->SetLineColor(kBlue); TCl->SetMarkerColor(kBlue); TCl->SetLineWidth(3);
 // Plutonium
 // ################################################################################
 
-    TCanvas *C0 = new TCanvas("C0","Pu",1400,900);
+    TCanvas *C0 = new TCanvas("C0","Pu",1500,900);
     C0->Divide(2,2,0.01,0.01);
         
     C0->cd(1);
@@ -86,7 +86,7 @@ TCl->SetLineColor(kBlue); TCl->SetMarkerColor(kBlue); TCl->SetLineWidth(3);
 // MA
 // ################################################################################
 
-    TCanvas *C1 = new TCanvas("C1","MA",1400,900);
+    TCanvas *C1 = new TCanvas("C1","MA",1500,900);
     C1->Divide(2,2,0.01,0.01);
         
     C1->cd(1);

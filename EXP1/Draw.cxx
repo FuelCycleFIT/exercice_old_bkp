@@ -132,27 +132,27 @@ TC2->SetLineColor(kBlue); TC2->SetMarkerColor(kBlue); TC2->SetLineWidth(2);
     L01->Draw();
     
     C1->cd(2);
-    TC1->Draw("B1+B3+B6:T","","L");
-    TC2->Draw("B1+B3+B6:T","","Lsame");
-    tmp0 = (TH1F*)gPad->GetPrimitive("htemp"); tmp0->SetTitle("ALL in Stock");
+    TC1->Draw("B91:T","","L");
+    TC2->Draw("B91:T","","Lsame");
+    tmp0 = (TH1F*)gPad->GetPrimitive("htemp"); tmp0->SetTitle("Total U");
     tmp0->GetXaxis()->SetTitle("Time (y)");    tmp0->GetXaxis()->CenterTitle();    tmp0->GetXaxis()->SetTitleOffset(0.8);  tmp0->GetXaxis()->SetTitleSize(0.05);
     tmp0->GetYaxis()->SetTitle("Mass (tons)"); tmp0->GetYaxis()->CenterTitle();    tmp0->GetYaxis()->SetTitleOffset(0.8);  tmp0->GetYaxis()->SetTitleSize(0.05);
     gPad->Update();
     L01->Draw();
     
     C1->cd(3);
-    TC1->Draw("B1:T","","L");
-    TC2->Draw("B1:T","","Lsame");
-    tmp0 = (TH1F*)gPad->GetPrimitive("htemp"); tmp0->SetTitle("U in Stock");
+    TC1->Draw("B12:T","","L");
+    TC2->Draw("B12:T","","Lsame");
+    tmp0 = (TH1F*)gPad->GetPrimitive("htemp"); tmp0->SetTitle("U5 in Stock");
     tmp0->GetXaxis()->SetTitle("Time (y)");    tmp0->GetXaxis()->CenterTitle();    tmp0->GetXaxis()->SetTitleOffset(0.8);  tmp0->GetXaxis()->SetTitleSize(0.05);
     tmp0->GetYaxis()->SetTitle("Mass (tons)"); tmp0->GetYaxis()->CenterTitle();    tmp0->GetYaxis()->SetTitleOffset(0.8);  tmp0->GetYaxis()->SetTitleSize(0.05);
     gPad->Update();
     L01->Draw();
     
     C1->cd(4);
-    TC1->Draw("B91:T","","L");
-    TC2->Draw("B91:T","","Lsame");
-    tmp0 = (TH1F*)gPad->GetPrimitive("htemp"); tmp0->SetTitle("Total U");
+    TC1->Draw("B1:T","","L");
+    TC2->Draw("B1:T","","Lsame");
+    tmp0 = (TH1F*)gPad->GetPrimitive("htemp"); tmp0->SetTitle("U in Stock");
     tmp0->GetXaxis()->SetTitle("Time (y)");    tmp0->GetXaxis()->CenterTitle();    tmp0->GetXaxis()->SetTitleOffset(0.8);  tmp0->GetXaxis()->SetTitleSize(0.05);
     tmp0->GetYaxis()->SetTitle("Mass (tons)"); tmp0->GetYaxis()->CenterTitle();    tmp0->GetYaxis()->SetTitleOffset(0.8);  tmp0->GetYaxis()->SetTitleSize(0.05);
     gPad->Update();

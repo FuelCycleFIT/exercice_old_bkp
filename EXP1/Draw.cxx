@@ -55,9 +55,9 @@ TC2->SetLineColor(kBlue); TC2->SetMarkerColor(kBlue); TC2->SetLineWidth(2);
 // Legend
 // ################################################################################
     
-    TLegend *L01 = new TLegend(0.75,0.10,0.90,0.25);
-    L01->AddEntry(TC1, s_Code1.c_str(), "L");
-    L01->AddEntry(TC2, s_Code2.c_str(), "L");
+    TLegend *L01 = new TLegend(0.55,0.10,0.90,0.25);
+    L01->AddEntry(TC1, (s_Code1 + " - Prob. " + Exo1 + " - Run " + Run1).c_str(), "L");
+    L01->AddEntry(TC2, (s_Code2 + " - Prob. " + Exo2 + " - Run " + Run2).c_str(), "L");
 
 // ################################################################################
 // ENERGY

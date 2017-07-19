@@ -5,9 +5,9 @@ gStyle->SetOptStat(0);
 
 cout<<endl<<"----------------------------------"<<endl;
 cout<<"USAGE : "<<endl;
-cout<<".x Draw.cxx(\"code1\",\"code2\",\"Ex1\",\"Ex2\",\"Run1\",\"Run2\")"<<endl;
+cout<<".x Draw.cxx(\"code1\",\"code2\",\"Prob1\",\"Prob2\",\"Run1\",\"Run2\")"<<endl;
 cout<<"EXAMPLE : "<<endl;
-cout<<".x Draw.cxx(\"class\",\"class\",\"EX1\",\"EX1\",\"1\",\"1\")"<<endl;
+cout<<".x Draw.cxx(\"class\",\"class\",\"Prob1\",\"Prob1\",\"1\",\"1\")"<<endl;
 cout<<"----------------------------------"<<endl<<endl;
 
 string Code1 = s_Code1; string Code2 = s_Code2;
@@ -56,8 +56,8 @@ TC2->SetLineColor(kBlue); TC2->SetMarkerColor(kBlue); TC2->SetLineWidth(2);
 // ################################################################################
     
     TLegend *L01 = new TLegend(0.55,0.10,0.90,0.25);
-    L01->AddEntry(TC1, (s_Code1 + " - Prob. " + Exo1 + " - Run " + Run1).c_str(), "L");
-    L01->AddEntry(TC2, (s_Code2 + " - Prob. " + Exo2 + " - Run " + Run2).c_str(), "L");
+    L01->AddEntry(TC1, (s_Code1 + " - " + Exo1 + " - Run" + Run1).c_str(), "L");
+    L01->AddEntry(TC2, (s_Code2 + " - " + Exo2 + " - Run" + Run2).c_str(), "L");
 
 // ################################################################################
 // ENERGY
@@ -193,6 +193,59 @@ TC2->SetLineColor(kBlue); TC2->SetMarkerColor(kBlue); TC2->SetLineWidth(2);
     L01->Draw();
     
     C2->cd(4);
+    TC1->Draw("B95:T","","L");
+    TC2->Draw("B95:T","","Lsame");
+    tmp0 = (TH1F*)gPad->GetPrimitive("htemp"); tmp0->SetTitle("Total Cm");
+    tmp0->GetXaxis()->SetTitle("Time (y)");    tmp0->GetXaxis()->CenterTitle();    tmp0->GetXaxis()->SetTitleOffset(0.8);  tmp0->GetXaxis()->SetTitleSize(0.05);
+    tmp0->GetYaxis()->SetTitle("Mass (tons)"); tmp0->GetYaxis()->CenterTitle();    tmp0->GetYaxis()->SetTitleOffset(0.8);  tmp0->GetYaxis()->SetTitleSize(0.05);
+    gPad->Update();
+    L01->Draw();
+
+// ################################################################################
+// WHAT YOU WANT
+// ################################################################################
+
+    TCanvas *C3 = new TCanvas("C3","MA",1500,900);
+    C3->Divide(2,2,0.01,0.01);
+        
+    C3->cd(1);
+    TC1->Draw("B3:T","","L");
+    TC2->Draw("B3:T","","Lsame");
+    tmp0 = (TH1F*)gPad->GetPrimitive("htemp"); tmp0->SetTitle("Pu in Stock");
+    tmp0->GetXaxis()->SetTitle("Time (y)");    tmp0->GetXaxis()->CenterTitle();    tmp0->GetXaxis()->SetTitleOffset(0.8);  tmp0->GetXaxis()->SetTitleSize(0.05);
+    tmp0->GetYaxis()->SetTitle("Mass (tons)"); tmp0->GetYaxis()->CenterTitle();    tmp0->GetYaxis()->SetTitleOffset(0.8);  tmp0->GetYaxis()->SetTitleSize(0.05);
+    gPad->Update();
+    L01->Draw();
+    
+    C3->cd(2);
+    TC1->Draw("B8/B3:T","","L");
+    TC1->Draw("B7/B3:T","","Lsame");
+    TC1->Draw("B9/B3:T","","Lsame");
+    TC1->Draw("B10/B3:T","","Lsame");
+    TC1->Draw("B11/B3:T","","Lsame");
+    TC2->Draw("B7/B3:T","","Lsame");
+    TC2->Draw("B8/B3:T","","Lsame");
+    TC2->Draw("B9/B3:T","","Lsame");
+    TC2->Draw("B10/B3:T","","Lsame");
+    TC2->Draw("B11/B3:T","","Lsame");
+    tmp0 = (TH1F*)gPad->GetPrimitive("htemp"); tmp0->SetTitle("Pu isotopie in Cycle");
+    tmp0->GetXaxis()->SetTitle("Time (y)");    tmp0->GetXaxis()->CenterTitle();    tmp0->GetXaxis()->SetTitleOffset(0.8);  tmp0->GetXaxis()->SetTitleSize(0.05);
+    tmp0->GetYaxis()->SetTitle("Mass (tons)"); tmp0->GetYaxis()->CenterTitle();    tmp0->GetYaxis()->SetTitleOffset(0.8);  tmp0->GetYaxis()->SetTitleSize(0.05);
+    gPad->Update();
+    L01->Draw();
+    
+    C3->cd(3);
+    TC2->Draw("B102:T","","L");
+    TC1->Draw("B102:T","","Lsame");
+    TC1->Draw("B66:T","","Lsame");
+    TC2->Draw("B66:T","","Lsame");
+    tmp0 = (TH1F*)gPad->GetPrimitive("htemp"); tmp0->SetTitle("U5");
+    tmp0->GetXaxis()->SetTitle("Time (y)");    tmp0->GetXaxis()->CenterTitle();    tmp0->GetXaxis()->SetTitleOffset(0.8);  tmp0->GetXaxis()->SetTitleSize(0.05);
+    tmp0->GetYaxis()->SetTitle("Mass (tons)"); tmp0->GetYaxis()->CenterTitle();    tmp0->GetYaxis()->SetTitleOffset(0.8);  tmp0->GetYaxis()->SetTitleSize(0.05);
+    gPad->Update();
+    L01->Draw();
+    
+    C3->cd(4);
     TC1->Draw("B95:T","","L");
     TC2->Draw("B95:T","","Lsame");
     tmp0 = (TH1F*)gPad->GetPrimitive("htemp"); tmp0->SetTitle("Total Cm");

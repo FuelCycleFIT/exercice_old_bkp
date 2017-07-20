@@ -1,6 +1,6 @@
 int Draw(string s_Code1, string s_Code2, string s_Exo1, string s_Exo2, string s_Run1, string s_Run2)
 {
-gROOT->Reset()
+gROOT->Reset();
 gStyle->SetOptStat(0);
 
 cout<<endl<<"----------------------------------"<<endl;
